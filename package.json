@@ -1,0 +1,26 @@
+{
+  "name": "wizard-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bufferutil": "^4.0.1",
+    "discord.js": "^11.4.2",
+    "dotenv": "^6.2.0",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fictitiouswizard/wizard-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fictitiouswizard/wizard-bot/issues"
+  },
+  "homepage": "https://github.com/fictitiouswizard/wizard-bot#readme"
+}
