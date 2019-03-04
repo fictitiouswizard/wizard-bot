@@ -45,7 +45,7 @@ var gotTime = (cmd, msg) => {
 
     var s = now.to(gotDate);
 
-    msg.reply("Game of Thones will air in " + s);
+    msg.reply("Game of Thones will air " + s);
 }
 
 client.on("ready", () => {
