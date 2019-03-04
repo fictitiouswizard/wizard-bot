@@ -39,6 +39,15 @@ var purge = (cmd, msg) => {
     }
 }
 
+var gotTime = (cmd, msg) => {
+    let now = moment();
+    let gotDate = moment("14/04/2019 21:00:00", "DD/MM/YYYY HH:mm:ss");
+
+    var s = now.to(gotDate);
+
+    msg.reply("Game of Thones will air in " + s);
+}
+
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -54,6 +63,9 @@ client.on("message", msg => {
                 break;
             case "purge":
                 purge(command, msg);
+                break;
+            case "got":
+                gotTime(command, msg);
                 break;
         }
     }
