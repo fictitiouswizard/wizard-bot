@@ -6,6 +6,9 @@ dotenv.config();
 const loginKey = process.env.KEYS_TO_THE_KINGDOM;
 
 const moment = require("moment");
+const momentDurationFormatSetup = require("moment-duration-format");
+
+momentDurationFormatSetup(moment);
 
 const Discord = require("discord.js");
 const client = new Discord.Client();
@@ -43,9 +46,20 @@ var gotTime = (cmd, msg) => {
     let now = moment();
     let gotDate = moment("14/04/2019 21:00:00", "DD/MM/YYYY HH:mm:ss");
 
-    var s = now.to(gotDate);
+    if(cmd[1] != null) {
+        let option = cmd[1];
 
-    msg.reply("Game of Thones will air " + s);
+        if(option == "exact") {
+            let s = moment.duration(gotDate.diff(now)).format("M [months], d [days], hh [hours], mm [minutes], ss [seconds]");
+            msg.reply("Game of Thrones will air in " + s);  
+        } else {
+            var s = now.to(gotDate);
+            msg.reply("Game of Thones will air " + s);    
+        }
+    } else {
+        var s = now.to(gotDate);
+        msg.reply("Game of Thones will air " + s);
+    }
 }
 
 client.on("ready", () => {
